@@ -1,0 +1,1 @@
+{"uuid": "ac46f416-dd38-4d0b-99be-383a6521371a", "name": "autoviz", "base_image": "orchest/base-kernel-py", "language": "python", "gpu_support": false}

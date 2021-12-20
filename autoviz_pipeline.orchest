@@ -1,0 +1,106 @@
+{
+    "name": "autoviz_pipeline",
+    "parameters": {},
+    "settings": {
+        "auto_eviction": false,
+        "data_passing_memory_size": "1GB"
+    },
+    "steps": {
+        "35ef4277-ab17-440d-a36f-451e9459b3ee": {
+            "environment": "ac46f416-dd38-4d0b-99be-383a6521371a",
+            "file_path": "run_autoviz.py",
+            "incoming_connections": [
+                "d4989d5a-7295-499a-a422-f67a63cdcc12"
+            ],
+            "kernel": {
+                "display_name": "autoviz",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    669.5,
+                    81.5
+                ]
+            },
+            "parameters": {
+                "av_type": "train",
+                "chart_format": "png",
+                "verbose": 2
+            },
+            "title": "run_autoviz_train",
+            "uuid": "35ef4277-ab17-440d-a36f-451e9459b3ee"
+        },
+        "6d57ced6-de6d-4cfd-aa5e-241ef28e619f": {
+            "environment": "ac46f416-dd38-4d0b-99be-383a6521371a",
+            "file_path": "load_file.py",
+            "incoming_connections": [],
+            "kernel": {
+                "display_name": "autoviz",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    51,
+                    229
+                ]
+            },
+            "parameters": {
+                "filename": "houseval.csv",
+                "sep": ",",
+                "target": "MedHouseVal"
+            },
+            "title": "load_file_from_data_folder",
+            "uuid": "6d57ced6-de6d-4cfd-aa5e-241ef28e619f"
+        },
+        "d4989d5a-7295-499a-a422-f67a63cdcc12": {
+            "environment": "ac46f416-dd38-4d0b-99be-383a6521371a",
+            "file_path": "split_data.py",
+            "incoming_connections": [
+                "6d57ced6-de6d-4cfd-aa5e-241ef28e619f"
+            ],
+            "kernel": {
+                "display_name": "autoviz",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    392.5,
+                    227.5
+                ]
+            },
+            "parameters": {},
+            "title": "split_train_test",
+            "uuid": "d4989d5a-7295-499a-a422-f67a63cdcc12"
+        },
+        "da26b7d7-1820-45c4-894c-bf69448b3569": {
+            "environment": "ac46f416-dd38-4d0b-99be-383a6521371a",
+            "file_path": "run_autoviz.py",
+            "incoming_connections": [
+                "d4989d5a-7295-499a-a422-f67a63cdcc12"
+            ],
+            "kernel": {
+                "display_name": "autoviz",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    674.5,
+                    351.5
+                ]
+            },
+            "parameters": {
+                "av_type": "test",
+                "chart_format": "png",
+                "verbose": 2
+            },
+            "title": "run_autoviz_test",
+            "uuid": "da26b7d7-1820-45c4-894c-bf69448b3569"
+        }
+    },
+    "uuid": "72072a61-752a-46da-a693-4d361c0bcd94",
+    "version": "1.0.0"
+}
